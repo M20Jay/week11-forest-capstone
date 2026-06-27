@@ -9,7 +9,7 @@
 A production-style MLOps pipeline that ingests real, satellite-derived deforestation data from Global Forest Watch's authenticated Data API, building toward a deforestation risk classifier aligned with UNEP's biodiversity monitoring mandate.
 
 🔗 Data Source → [Global Forest Watch Data API](https://data-api.globalforestwatch.org)
-🔗 Programme → [github.com/M20Jay](https://github.com/M20Jay)
+🔗 Live Pipeline → *Coming Day 4-5 — FastAPI endpoint on martin-mlops.com*
 
 ---
 
