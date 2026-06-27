@@ -41,7 +41,8 @@ Raw JSON response
 
 data/raw/kenya_tree_cover_loss.json
 ```
-**Confirmed real output (2001–2025):** Kenya tree cover loss ranges from ~3,093 ha (2002) to a peak of ~9,157 ha (2020) — verified directly from Hansen/UMD satellite data via GFW's live API, not synthetic or estimated figures.
+*Confirmed real output (2001–2025): Kenya tree cover loss ranges from ~3,093 ha (2002) to a peak of ~9,157 ha (2020) — verified directly from Hansen/UMD satellite data via GFW's live API, not synthetic or estimated figures.*
+
 ---
 
 ## Day 1 — What's Been Built
@@ -89,6 +90,7 @@ week11-forest-capstone/
 
 └── .gitignore           → protects .env, venv/, secrets
 ```
+
 ---
 
 ## Running This Yourself
@@ -108,9 +110,10 @@ python3 scripts/ingest_gfw_data.py
 
 ---
 
-## Why This Matters for UNEP's Mandate
+## Why This Matters
 
-Global Forest Watch data is widely used by environmental and conservation organizations for biodiversity and deforestation monitoring. This pipeline demonstrates the exact technical pattern — authenticated API integration, real satellite-derived data, reproducible engineering practice — needed for production environmental monitoring systems at scale.
+*Global Forest Watch data is widely used by environmental and conservation organizations for biodiversity and deforestation monitoring. This pipeline demonstrates the exact technical pattern — authenticated API integration, real satellite-derived data, reproducible engineering practice — needed for production environmental monitoring systems at scale.*
+
 ---
 
 *Martin James Ng'ang'a | MLOps Engineer | Nairobi, Kenya | Week 11 of 15 — MLOps Programme*
