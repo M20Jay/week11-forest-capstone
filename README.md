@@ -110,8 +110,7 @@ python3 scripts/ingest_gfw_data.py
 
 ## Why This Matters for UNEP's Mandate
 
-Global Forest Watch is GFW data UNEP itself references for environmental monitoring. This pipeline demonstrates the exact technical pattern — authenticated API integration, real satellite-derived data, reproducible engineering practice — needed for production biodiversity monitoring systems at scale.
-
+Global Forest Watch data is widely used by environmental and conservation organizations for biodiversity and deforestation monitoring. This pipeline demonstrates the exact technical pattern — authenticated API integration, real satellite-derived data, reproducible engineering practice — needed for production environmental monitoring systems at scale.
 ---
 
 *Martin James Ng'ang'a | MLOps Engineer | Nairobi, Kenya | Week 11 of 15 — MLOps Programme*
