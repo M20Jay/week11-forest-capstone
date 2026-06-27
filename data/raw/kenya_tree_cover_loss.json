@@ -1,0 +1,105 @@
+{
+  "data": [
+    {
+      "year": 2001,
+      "loss_area_ha": 4115.34944
+    },
+    {
+      "year": 2002,
+      "loss_area_ha": 3093.18425
+    },
+    {
+      "year": 2003,
+      "loss_area_ha": 3583.24908
+    },
+    {
+      "year": 2004,
+      "loss_area_ha": 4326.48917
+    },
+    {
+      "year": 2005,
+      "loss_area_ha": 4043.51375
+    },
+    {
+      "year": 2006,
+      "loss_area_ha": 4399.63008
+    },
+    {
+      "year": 2007,
+      "loss_area_ha": 5451.99045
+    },
+    {
+      "year": 2008,
+      "loss_area_ha": 5611.98546
+    },
+    {
+      "year": 2009,
+      "loss_area_ha": 5838.78997
+    },
+    {
+      "year": 2010,
+      "loss_area_ha": 4357.47332
+    },
+    {
+      "year": 2011,
+      "loss_area_ha": 4265.73334
+    },
+    {
+      "year": 2012,
+      "loss_area_ha": 4475.7313
+    },
+    {
+      "year": 2013,
+      "loss_area_ha": 5395.64321
+    },
+    {
+      "year": 2014,
+      "loss_area_ha": 5850.879730000001
+    },
+    {
+      "year": 2015,
+      "loss_area_ha": 4583.72055
+    },
+    {
+      "year": 2016,
+      "loss_area_ha": 7474.93722
+    },
+    {
+      "year": 2017,
+      "loss_area_ha": 8376.95354
+    },
+    {
+      "year": 2018,
+      "loss_area_ha": 6582.3461
+    },
+    {
+      "year": 2019,
+      "loss_area_ha": 7551.96993
+    },
+    {
+      "year": 2020,
+      "loss_area_ha": 9156.71647
+    },
+    {
+      "year": 2021,
+      "loss_area_ha": 5527.3849900000005
+    },
+    {
+      "year": 2022,
+      "loss_area_ha": 4012.91487
+    },
+    {
+      "year": 2023,
+      "loss_area_ha": 5153.54924
+    },
+    {
+      "year": 2024,
+      "loss_area_ha": 7360.45033
+    },
+    {
+      "year": 2025,
+      "loss_area_ha": 4904.02011
+    }
+  ],
+  "status": "success"
+}

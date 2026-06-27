@@ -1,4 +1,5 @@
 import os
+import json
 import requests
 import pandas as pd
 from dotenv import load_dotenv
@@ -47,3 +48,11 @@ response = requests.post(
 
 print(f"Status code: {response.status_code}")
 print(response.json())
+
+if response.status_code == 200:
+    with open("data/raw/kenya_tree_cover_loss.json", "w") as f:
+        json.dump(response.json(), f, indent=2)
+    print("Saved raw response to data/raw/kenya_tree_cover_loss.json")
+else:
+    print("Did not save — request was not successful")
+
