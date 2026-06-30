@@ -14,17 +14,32 @@ headers = {
 }
 print(f"Headers built: {headers}")
 
-geometry = {
-    "type": "Polygon",
-    "coordinates": [[
-        [33.9, -4.7],
-        [41.9, -4.7],
-        [41.9, 4.6],
-        [33.9, 4.6],
-        [33.9, -4.7],
-    ]]
+countries = {
+    "Kenya":       [33.9, -4.7, 41.9, 4.6],
+    "Tanzania":    [29.3, -11.7, 40.3, -0.95],
+    "Uganda":      [29.6, -1.5, 35.0, 4.2],
+    "Rwanda":      [28.9, -2.9, 30.9, -1.0],
+    "DRC":         [12.2, -13.3, 31.3, 5.4],
+    "Burundi":     [29.0, -4.5, 30.8, -2.3],
+    "South Sudan": [23.9, 3.5, 35.3, 12.2],
+    "Somalia":     [41.0, -1.7, 51.1, 12.0],
 }
-print("Geometry built for Kenya bounding box")
+def build_geometry(bbox):
+    west, south, east, north = bbox
+    return {
+        "type": "Polygon",
+        "coordinates": [[
+            [west, south],
+            [east, south],
+            [east, north],
+            [west, north],
+            [west, south],
+        ]]
+    }
+
+for country_name, bbox in countries.items():
+    geometry = build_geometry(bbox)
+    print(f"Geometry built for {country_name}")
 
 sql = """
     SELECT
@@ -36,23 +51,25 @@ sql = """
     GROUP BY umd_tree_cover_loss__year
     ORDER BY umd_tree_cover_loss__year
 """
-print("SQL query built")
 
 url = "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss/v1.10/query/json"
 
-response = requests.post(
-    url,
-    headers=headers,
-    json={"sql": sql, "geometry": geometry}
-)
+for country_name, bbox in countries.items():
+    geometry = build_geometry(bbox)
+    print(f"\nProcessing {country_name}...")
 
-print(f"Status code: {response.status_code}")
-print(response.json())
+    response = requests.post(
+        url,
+        headers=headers,
+        json={"sql": sql, "geometry": geometry}
+    )
 
-if response.status_code == 200:
-    with open("data/raw/kenya_tree_cover_loss.json", "w") as f:
-        json.dump(response.json(), f, indent=2)
-    print("Saved raw response to data/raw/kenya_tree_cover_loss.json")
-else:
-    print("Did not save — request was not successful")
+    print(f"  Status code: {response.status_code}")
 
+    if response.status_code == 200:
+        filename = f"data/raw/{country_name.lower().replace(' ', '_')}_tree_cover_loss.json"
+        with open(filename, "w") as f:
+            json.dump(response.json(), f, indent=2)
+        print(f"  Saved to {filename}")
+    else:
+        print(f"  Did not save {country_name} — request was not successful")

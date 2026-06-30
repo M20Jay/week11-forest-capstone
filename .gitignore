@@ -7,4 +7,4 @@ data/raw/*.json
 data/processed/*.parquet
 *.pem
 .DS_Store
-!data/raw/kenya_tree_cover_loss.json
+!data/raw/*_tree_cover_loss.json
