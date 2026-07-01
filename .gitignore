@@ -8,3 +8,4 @@ data/processed/*.parquet
 *.pem
 .DS_Store
 !data/raw/*_tree_cover_loss.json
+!data/processed/features.parquet
