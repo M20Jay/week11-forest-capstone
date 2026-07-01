@@ -27,7 +27,7 @@ Deforestation monitoring across Africa has historically relied on periodic manua
 
 This pipeline covers all eight member states of the East African Community (EAC) — Kenya, Tanzania, Uganda, Rwanda, the Democratic Republic of Congo, Burundi, South Sudan, and Somalia. The EAC is an official regional economic and political bloc, not an arbitrary country selection, which gives this dataset a real, defensible geographic boundary.
 
-Country bounding box coordinates were sourced from [Natural Earth](https://www.naturalearthdata.com/) public reference data, cross-checked against OpenStreetMap Nominatim, and sanity-tested against known relative country sizes (DRC — Africa's 2nd-largest country — correctly produced the largest bounding box in the set) before use.
+Country bounding box coordinates were sourced from [Natural Earth](https://www.naturalearthdata.com/) public reference data (via a [community-compiled reference gist](https://gist.github.com/graydon/11198540)), cross-checked against [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/), and sanity-tested against known relative country sizes (DRC — Africa's 2nd-largest country — correctly produced the largest bounding box in the set) before use.
 
 All 8 countries returned successful (HTTP 200) responses from the GFW API, including Somalia and South Sudan — two countries initially flagged as potential edge cases due to arid terrain and historically lower data infrastructure.
 
