@@ -9,3 +9,8 @@ data/processed/*.parquet
 .DS_Store
 !data/raw/*_tree_cover_loss.json
 !data/processed/features.parquet
+mlruns/
+mlflow.db
+outputs/train.log
+outputs/*.log
+!outputs/deforestation_pipeline.pkl
