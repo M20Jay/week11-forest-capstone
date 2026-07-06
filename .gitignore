@@ -14,3 +14,4 @@ mlflow.db
 outputs/train.log
 outputs/*.log
 !outputs/deforestation_pipeline.pkl
+*.swp
