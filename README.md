@@ -34,7 +34,7 @@ All 8 countries returned successful (HTTP 200) responses from the GFW API, inclu
 
 ---
 
-## Architecture (Day 2)
+## Pipeline Architecture
 
 ```
 GFW Data API (data-api.globalforestwatch.org)
