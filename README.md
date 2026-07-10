@@ -92,7 +92,7 @@ outputs/ (confusion_matrix.png, calibration_curve.png, feature_importance.png)
 | OOF threshold sweep — Gap 2 closed | ✅ Done (Day 2) |
 | Calibration curves + Brier score — Gap 1 closed | ✅ Done (Day 2) |
 | pytest suite — 21 tests passing | ✅ Done (Day 2) |
-| SageMaker Training Job | ⏳ Day 3 |
+| SageMaker Training Job setup | ✅ Done (Day 3 — quota pending) |
 | FastAPI endpoint + PostgreSQL + Prometheus + systemd | ✅ Done (Day 4) |
 | SHAP explainability | ⏳ Day 5 |
 | Evidently AI + Grafana drift monitoring | ⏳ Day 6 |
