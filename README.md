@@ -1,7 +1,7 @@
 # Forest Capstone — Deforestation Risk Monitoring with Real Satellite Data
 
 ![Python](https://img.shields.io/badge/python-3.14-blue)
-![Status](https://img.shields.io/badge/status-Day%202%20Complete-brightgreen)
+![Status](https://img.shields.io/badge/status-Day%204%20Complete-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-8%20EAC%20countries-green)
 ![Data Source](https://img.shields.io/badge/data-Global%20Forest%20Watch-green)
 ![AWS](https://img.shields.io/badge/AWS-EC2%20Frankfurt-orange)
@@ -12,7 +12,7 @@ A production-style MLOps pipeline that ingests real, satellite-derived deforesta
 
 🔗 Data Source → [Global Forest Watch Data API](https://data-api.globalforestwatch.org)
 
-🔗 Live Pipeline → *Coming Day 4-5 — FastAPI endpoint on martin-mlops.com*
+🔗 **Live API** → http://3.67.15.230:8004/docs
 
 ---
 
@@ -93,7 +93,7 @@ outputs/ (confusion_matrix.png, calibration_curve.png, feature_importance.png)
 | Calibration curves + Brier score — Gap 1 closed | ✅ Done (Day 2) |
 | pytest suite — 21 tests passing | ✅ Done (Day 2) |
 | SageMaker Training Job | ⏳ Day 3 |
-| SageMaker vs EC2 FastAPI comparison | ⏳ Day 4 |
+| FastAPI endpoint + PostgreSQL + Prometheus + systemd | ✅ Done (Day 4) |
 | SHAP explainability | ⏳ Day 5 |
 | Evidently AI + Grafana drift monitoring | ⏳ Day 6 |
 | GitHub Actions CI/CD + Airflow DAG | ⏳ Day 7 |
