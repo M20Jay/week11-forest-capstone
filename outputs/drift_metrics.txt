@@ -1,0 +1,12 @@
+Drift Report — 2026-07-17 16:00:18
+============================================================
+Drifted features: 1/6
+
+Feature                   PSI       KS  p-value Status
+------------------------------------------------------------
+loss_area_ha           0.0262   0.0652   0.8302 STABLE
+prev_year_loss         0.0000   0.0000   1.0000 STABLE
+rolling_3yr_avg        0.0000   0.0000   1.0000 STABLE
+yoy_change             0.0477   0.0924   0.4130 STABLE
+country_area_km2       0.0000   0.0000   1.0000 STABLE
+loss_per_km2           0.1523   0.1196   0.1442 MINOR DRIFT
