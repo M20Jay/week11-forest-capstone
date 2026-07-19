@@ -95,7 +95,7 @@ outputs/ (confusion_matrix.png, calibration_curve.png, feature_importance.png)
 | SageMaker Training Job setup | ✅ Done (Day 3 — quota pending) |
 | FastAPI endpoint + PostgreSQL + Prometheus + systemd | ✅ Done (Day 4) |
 | SHAP explainability — TreeExplainer, summary + waterfall plots | ✅ Done (Day 5) |
-| Drift monitoring + Grafana dashboard | ⏳ Day 6 |
+| Drift monitoring PSI+KS + Grafana dashboard (Prometheus) | ✅ Done (Day 6) |
 | GitHub Actions CI/CD + Airflow DAG | ⏳ Day 7 |
 
 ---
