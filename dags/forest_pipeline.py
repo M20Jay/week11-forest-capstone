@@ -1,4 +1,6 @@
 # dags/forest_pipeline.py
+# Note: Requires pip install in Airflow Docker container for full execution
+# Run: docker exec airflow-docker-airflow-worker-1 pip install requests pandas numpy scikit-learn joblib lightgbm xgboost shap
 # Airflow DAG — Deforestation Risk Pipeline
 # Runs every Monday at 5am
 # Orchestrates: ingest → features → train → evaluate → monitor
@@ -17,7 +19,7 @@ default_args = {
 }
 
 # ── Project path ──────────────────────────────────────────────────
-PROJECT = "/home/ubuntu/projects/week11-forest-capstone"
+PROJECT = "/opt/airflow/project"
 PYTHON  = f"{PROJECT}/venv/bin/python3"
 
 # ── DAG definition ────────────────────────────────────────────────
