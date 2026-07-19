@@ -160,3 +160,14 @@ Global Forest Watch data is widely used by environmental and conservation organi
 
 *Martin James Ng'ang'a | MLOps Engineer | Nairobi, Kenya | Week 11 of 15 — MLOps Programme*
 
+
+## Live Services
+
+| Service | URL | Description |
+|---|---|---|
+| Prediction API | http://3.67.15.230:8004/predict | POST predictions |
+| API Docs | http://3.67.15.230:8004/docs | Interactive Swagger UI |
+| Health Check | http://3.67.15.230:8004/health | API status |
+| Grafana | http://3.67.15.230:3000 | Monitoring dashboard |
+| Prometheus | http://3.67.15.230:9090 | Metrics |
+| Airflow | http://3.67.15.230:8080 | Pipeline orchestration |
