@@ -96,7 +96,7 @@ outputs/ (confusion_matrix.png, calibration_curve.png, feature_importance.png)
 | FastAPI endpoint + PostgreSQL + Prometheus + systemd | ✅ Done (Day 4) |
 | SHAP explainability — TreeExplainer, summary + waterfall plots | ✅ Done (Day 5) |
 | Drift monitoring PSI+KS + Grafana dashboard (Prometheus) | ✅ Done (Day 6) |
-| GitHub Actions CI/CD + Airflow DAG | ⏳ Day 7 |
+| GitHub Actions CI/CD + Airflow DAG forest_pipeline.py | ✅ Done (Day 7) |
 
 ---
 
