@@ -36,31 +36,31 @@ with DAG(
     # Task 1 — Ingest fresh GFW satellite data
     ingest = BashOperator(
         task_id="ingest_gfw_data",
-        bash_command=f"cd {PROJECT} && {PYTHON} scripts/ingest_gfw_data.py",
+        bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/ingest_gfw_data.py",
     )
 
     # Task 2 — Build features from raw data
     build_features = BashOperator(
         task_id="build_features",
-        bash_command=f"cd {PROJECT} && {PYTHON} scripts/build_features.py",
+        bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/build_features.py",
     )
 
     # Task 3 — Train model on latest data
     train = BashOperator(
         task_id="train_model",
-        bash_command=f"cd {PROJECT} && {PYTHON} scripts/train.py",
+        bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/train.py",
     )
 
     # Task 4 — Evaluate model performance
     evaluate = BashOperator(
         task_id="evaluate_model",
-        bash_command=f"cd {PROJECT} && {PYTHON} scripts/evaluate.py",
+        bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/evaluate.py",
     )
 
     # Task 5 — Monitor for data drift
     monitor = BashOperator(
         task_id="monitor_drift",
-        bash_command=f"cd {PROJECT} && {PYTHON} scripts/monitor.py",
+        bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/monitor.py",
     )
 
     # ── Task dependencies ─────────────────────────────────────────
