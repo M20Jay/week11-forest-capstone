@@ -20,7 +20,7 @@ default_args = {
 
 # ── Project path ──────────────────────────────────────────────────
 PROJECT = "/opt/airflow/project"
-PYTHON  = "/home/airflow/.local/bin/python3"
+PYTHON  = "/opt/airflow/project/venv/bin/python3"
 
 # ── DAG definition ────────────────────────────────────────────────
 with DAG(
