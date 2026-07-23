@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     - name: Install dependencies
@@ -23,24 +23,3 @@ jobs:
     - name: Run pytest
       run: |
         pytest tests/ -v --tb=short
-
-  deploy:
-    name: Deploy to EC2 (CD)
-    runs-on: ubuntu-latest
-    needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    steps:
-    - name: Deploy to EC2
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        timeout: 120s
-        command_timeout: 120s
-        script: |
-          cd ~/projects/week11-forest-capstone
-          git pull origin main
-          docker compose restart
-          sleep 5
-          curl http://localhost:8004/health
