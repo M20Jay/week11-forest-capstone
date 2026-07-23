@@ -11,6 +11,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import mlflow
+mlflow.set_tracking_uri("sqlite:////opt/airflow/project/mlflow.db")
 import mlflow.sklearn
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
