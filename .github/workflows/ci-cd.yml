@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Set up Python 3.11
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v4
       with:
         python-version: '3.11'
     - name: Install dependencies
@@ -36,11 +36,11 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
+        timeout: 120s
+        command_timeout: 120s
         script: |
           cd ~/projects/week11-forest-capstone
           git pull origin main
-          docker compose down
-          docker compose build --no-cache
-          docker compose up -d
+          docker compose restart
           sleep 5
           curl http://localhost:8004/health
