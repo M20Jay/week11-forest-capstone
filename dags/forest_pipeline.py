@@ -1,10 +1,6 @@
-# dags/forest_pipeline.py
-# Note: Requires pip install in Airflow Docker container for full execution
-# Run: docker exec airflow-docker-airflow-worker-1 pip install requests pandas numpy scikit-learn joblib lightgbm xgboost shap
 # Airflow DAG — Deforestation Risk Pipeline
 # Runs every Monday at 5am
-# Orchestrates: ingest → features → train → evaluate → monitor
-
+# Orchestrates: ingest → features → train → evaluate → save_to_s3 → monitor
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.bash import BashOperator
@@ -13,14 +9,15 @@ from airflow.operators.bash import BashOperator
 default_args = {
     "owner":            "martin",
     "depends_on_past":  False,
-    "email_on_failure": False,
+    "email_on_failure": True,
+    "email":            ["ngangam93@gmail.com"],
     "retries":          1,
     "retry_delay":      timedelta(minutes=5),
 }
 
 # ── Project path ──────────────────────────────────────────────────
 PROJECT = "/opt/airflow/project"
-PYTHON  = "/opt/airflow/project/venv/bin/python3"
+PYTHON  = "/usr/local/bin/python3"
 
 # ── DAG definition ────────────────────────────────────────────────
 with DAG(
@@ -57,11 +54,17 @@ with DAG(
         bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/evaluate.py",
     )
 
-    # Task 5 — Monitor for data drift
+    # Task 5 — Save predictions to S3
+    save_to_s3 = BashOperator(
+        task_id="save_to_s3",
+        bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/save_predictions.py",
+    )
+
+    # Task 6 — Monitor for data drift
     monitor = BashOperator(
         task_id="monitor_drift",
         bash_command=f"cd {PROJECT} && PYTHONPATH={PROJECT} {PYTHON} scripts/monitor.py",
     )
 
     # ── Task dependencies ─────────────────────────────────────────
-    ingest >> build_features >> train >> evaluate >> monitor
+    ingest >> build_features >> train >> evaluate >> save_to_s3 >> monitor
