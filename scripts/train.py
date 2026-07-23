@@ -8,6 +8,9 @@ import joblib
 import numpy as np
 import pandas as pd
 import mlflow
+import os
+mlflow.set_tracking_uri("sqlite:////opt/airflow/project/mlflow.db")
+mlflow.set_registry_uri("sqlite:////opt/airflow/project/mlflow.db")
 import mlflow.sklearn
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
@@ -208,7 +211,7 @@ with mlflow.start_run(run_name=f"{best_model_name}_tuned"):
     mlflow.log_metric("tuned_test_f1", final_test_f1)
     mlflow.log_metric("tuned_precision", precision_score(y_test, y_pred_final))
     mlflow.log_metric("tuned_recall",    recall_score(y_test, y_pred_final))
-    mlflow.sklearn.log_model(final_pipeline, "model")
+# #     mlflow.sklearn.log_model(final_pipeline, "model")
 
 # ── Save pipeline ─────────────────────────────────────────────────
 joblib.dump(final_pipeline, MODEL_PATH)

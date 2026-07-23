@@ -11,6 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import mlflow
 import mlflow.sklearn
+mlflow.set_tracking_uri("sqlite:////opt/airflow/project/mlflow.db")
 
 from sklearn.model_selection import train_test_split
 from sklearn.calibration import CalibratedClassifierCV, calibration_curve
@@ -163,10 +164,11 @@ with mlflow.start_run(run_name="evaluation"):
     mlflow.log_metric("test_recall",    recall_score(y_test, y_pred))
     mlflow.log_metric("brier_before",   brier_before)
     mlflow.log_metric("brier_after",    brier_after)
-    mlflow.log_artifact(str(cm_path))
-    mlflow.log_artifact(str(report_path))
-    mlflow.log_artifact(str(cal_path))
+#    mlflow.log_artifact(str(cm_path))
+#    mlflow.log_artifact(str(report_path))
+#    mlflow.log_artifact(str(cal_path))
     if hasattr(model_step, "feature_importances_"):
-        mlflow.log_artifact(str(fi_path))
+#        mlflow.log_artifact(str(fi_path))
+        pass
 
 log.info("Evaluation complete.")
