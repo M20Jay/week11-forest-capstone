@@ -12,7 +12,7 @@ A production-style MLOps pipeline that ingests real, satellite-derived deforesta
 
 🔗 Data Source → [Global Forest Watch Data API](https://data-api.globalforestwatch.org)
 
-🔗 **Live API** → http://3.67.15.230:8004/docs
+🔗 **Demo** → Available on request
 
 ---
 
@@ -165,9 +165,9 @@ Global Forest Watch data is widely used by environmental and conservation organi
 
 | Service | URL | Description |
 |---|---|---|
-| Prediction API | http://3.67.15.230:8004/predict | POST predictions |
-| API Docs | http://3.67.15.230:8004/docs | Interactive Swagger UI |
-| Health Check | http://3.67.15.230:8004/health | API status |
-| Grafana | http://3.67.15.230:3000 | Monitoring dashboard |
-| Prometheus | http://3.67.15.230:9090 | Metrics |
-| Airflow | http://3.67.15.230:8080 | Pipeline orchestration |
+| Prediction API | Demo available on request | POST predictions |
+| API Docs | Demo available on request | Interactive Swagger UI |
+| Health Check | Demo available on request | API status |
+| Grafana | Demo available on request | Monitoring dashboard |
+| Prometheus | Demo available on request | Metrics |
+| Airflow | Demo available on request | Pipeline orchestration |
