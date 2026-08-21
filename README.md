@@ -24,6 +24,20 @@ Deforestation monitoring across Africa has historically relied on periodic manua
 
 ---
 
+## Where This Fits
+
+A risk score sitting in a dashboard doesn't stop deforestation. Early detection only creates value if it reaches someone with the authority to act before the damage is done:
+
+- **Early-warning alerting** — high-risk zones flagged in near-real-time, before satellite imagery months later confirms the loss already happened, feeding a ranger patrol or conservation team's actual response queue.
+- **UNEP biodiversity monitoring** — this pipeline is explicitly built toward UNEP's mandate, not as a standalone research exercise. Continuous, automated monitoring is the kind of evidence international bodies increasingly require over periodic manual reports.
+- **REDD+ / carbon credit reporting** — several EAC member states have international climate reporting commitments tied to verified forest cover. Model-driven monitoring is exactly the kind of evidence these frameworks increasingly require.
+- **National forestry enforcement** — each EAC member state maintains a forestry department with enforcement authority. A risk score only creates value if it reaches the unit that can act on it.
+- **Feedback loop** — ground-truth verification, once available, is what would let this retrain against confirmed outcomes rather than predictions alone.
+
+This is currently a standalone classifier, not yet wired into any of these systems — the same design discipline that makes it straightforward to *hand off* into one when a real partner exists, rather than requiring a rebuild.
+
+---
+
 ## Geographic Scope
 
 This pipeline covers all eight member states of the East African Community (EAC) — Kenya, Tanzania, Uganda, Rwanda, the Democratic Republic of Congo, Burundi, South Sudan, and Somalia. The EAC is an official regional economic and political bloc, not an arbitrary country selection, which gives this dataset a real, defensible geographic boundary.
